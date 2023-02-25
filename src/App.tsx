@@ -1,34 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import { Select, SelectOption } from "./Select";
+
+const options = [
+  { label: "first", value: 1 },
+  { label: "second", value: 2 },
+  { label: "third", value: 3 },
+  { label: "fourth", value: 4 },
+  { label: "fifth", value: 5 },
+  { label: "sixth", value: 6 },
+  { label: "seventh", value: 7 },
+  { label: "eighth", value: 8 },
+  { label: "tenth", value: 10 },
+  { label: "ninth", value: 9 },
+  { label: "eleventh", value: 11 },
+  { label: "twelfth", value: 12 },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [value, setValue] = useState<SelectOption | undefined>(options[0]);
+  const [value2, setValue2] = useState<SelectOption[]>([options[0]]);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <Select value={value} options={options} onChange={setValue}></Select>
+      <br />
+      <Select
+        multiple={true}
+        value={value2}
+        options={options}
+        onChange={setValue2}
+      ></Select>
+    </>
+  );
 }
 
-export default App
+export default App;

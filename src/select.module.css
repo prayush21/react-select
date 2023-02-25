@@ -1,0 +1,112 @@
+.container{
+    position: relative;
+    width: 20em;
+    min-height: 1.5em;
+    border: 0.025em solid #777;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.container:focus{
+    border-color: hsl(200, 100, 50%);
+}
+
+.value{
+    flex-grow: 1;
+}
+
+.clear-btn{
+    background: none;
+    color: #777;
+    border: none;
+    outline: none;
+    padding: none;
+    cursor: pointer;
+    font-size: 1.25em;
+}
+
+.clear-btn:hover,
+.clear-btn:focus{
+    color: #333;
+}
+
+.divider{
+    align-self: stretch;
+    /* border: 0.5px solid #777; */
+    background-color: #777;
+    width: 0.05em;
+    outline: none;
+
+}
+
+.caret{
+    translate: 0 25%;
+    border: 0.25em solid transparent ;
+    border-top-color: #777;
+}
+
+.options{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    max-height: 15em;
+    overflow-y: auto;
+    border: 0.025em solid #777;
+    border-radius: 0.25em;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.25em);
+    z-index: 100;
+}
+
+.options.show{
+    display: block;
+}
+
+.option{
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+}
+
+.option.selected{
+    background-color: #66CCFF;
+}
+
+.option.highlighted{
+    color: white;
+    background-color: #0099FF;
+}
+
+.option-badge{
+    /* display: flex;     */
+    padding: 0.15em 0.25em;
+    margin: 0.25em 0.25em;
+    cursor: pointer;
+    background: none;
+    border: 0.025em solid#777;
+    outline: none;
+    border-radius: 0.25em;
+    vertical-align:middle;
+}
+
+.option-badge:hover,
+.option-badge:focus{
+    border-color: hsl(0,100%,50%);
+    background-color: hsl(0,100%,90%);
+}
+
+.remove-btn{
+    margin-left: 0.25em;
+    margin-top: 0.35em;
+    font-size: 1.25em;
+}
+
+.option-badge:hover > .remove-btn,
+.option-badge:focus > .remove-btn{
+    color: hsl(0,100%,50%);    
+}
