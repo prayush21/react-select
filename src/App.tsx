@@ -23,14 +23,14 @@ function App() {
 
   return (
     <>
-      <Select value={value} options={options} onChange={setValue}></Select>
-      <br />
       <Select
         multiple={true}
         value={value2}
         options={options}
         onChange={setValue2}
       ></Select>
+      <br />
+      <Select value={value} options={options} onChange={setValue}></Select>
     </>
   );
 }

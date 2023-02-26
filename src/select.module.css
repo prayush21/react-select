@@ -8,6 +8,7 @@
     display: flex;
     gap: 0.5em;
     align-items: center;
+    z-index: 10;
 }
 
 .container:focus{
@@ -52,6 +53,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    background-color: gainsboro;
     display: none;
     max-height: 15em;
     overflow-y: auto;
@@ -61,16 +63,18 @@
     position: absolute;
     left: 0;
     top: calc(100% + 0.25em);
-    z-index: 100;
+    z-index: 1000;
 }
 
 .options.show{
     display: block;
+   
 }
 
 .option{
     padding: 0.25em 0.5em;
     cursor: pointer;
+    z-index: 10;
 }
 
 .option.selected{
